@@ -13,10 +13,10 @@ const SearchField = () => {
 
   let navigate = useNavigate();
 
-  const handleClickOutside = useCallback(() => {
+  const handleClickOutside = useCallback((handleClickOutside) => {
     setDisplayProducts(false);
     document.removeEventListener('click', handleClickOutside);
-  });
+  },[]);
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
