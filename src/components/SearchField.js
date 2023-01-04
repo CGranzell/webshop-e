@@ -1,30 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
-import { fetchProducts } from "../API/Fetch";
-import { Link } from "react-router-dom";
-import { BsSearch } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
-import { device } from "./MediaQueries";
+import React, { useState, useEffect, useCallback } from 'react';
+import styled from 'styled-components';
+import { fetchProducts } from '../API/Fetch';
+import { Link } from 'react-router-dom';
+import { BsSearch } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
+import { device } from './MediaQueries';
 
 const SearchField = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [products, setProducts] = useState([]);
   const [displayProducts, setDisplayProducts] = useState(false);
 
   let navigate = useNavigate();
-  const ref = useRef(null);
+
+  const handleClickOutside = useCallback(() => {
+    setDisplayProducts(false);
+    document.removeEventListener('click', handleClickOutside);
+  });
 
   useEffect(() => {
-    document.addEventListener("click", handleClickOutside, true);
-  }, []);
-
-  const handleClickOutside = (e) => {
-    if (!ref.current.contains(e.target)) {
-      setDisplayProducts(false);
-    } else {
-      e.target.placeholder = "";
-    }
-  };
+    document.addEventListener('click', handleClickOutside);
+  }, [handleClickOutside]);
 
   useEffect(() => {
     fetchProducts(setProducts);
@@ -32,7 +28,7 @@ const SearchField = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (searchTerm === "") {
+    if (searchTerm === '') {
       return;
     } else {
       setDisplayProducts(false);
@@ -41,7 +37,7 @@ const SearchField = () => {
   };
 
   const filteredItems = products.filter((value) => {
-    if (searchTerm === "") {
+    if (searchTerm === '') {
       return null;
     } else if (
       value.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
@@ -51,8 +47,8 @@ const SearchField = () => {
   });
 
   const onBlur = (e) => {
-    e.target.placeholder = "Search...";
-    e.target.value = "";
+    e.target.placeholder = 'Search...';
+    e.target.value = '';
   };
 
   return (
@@ -66,14 +62,13 @@ const SearchField = () => {
             setDisplayProducts(true);
             setSearchTerm(event.target.value);
           }}
-          ref={ref}
         />
         {displayProducts && (
           <SearchResult>
-            {filteredItems.map((value, key) => {
+            {filteredItems.map((value) => {
               return (
-                <StyledLink to={`/products/${value.id}`}>
-                  <Wrapper key={key}>
+                <StyledLink key={value.id} to={`/products/${value.id}`}>
+                  <Wrapper>
                     <ProductImg>
                       <img src={value.image} alt="" />
                     </ProductImg>
@@ -114,7 +109,7 @@ const Input = styled.input`
   height: 3.3rem;
   border-radius: 14px;
   font-size: 1.2rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   @media ${device.tablet} {
     height: 2.6rem;
   }
@@ -165,7 +160,7 @@ const ProductImg = styled.div`
 
 const SearchItem = styled.p`
   margin: 1rem 0.5rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: black;
   height: 2rem;
   @media ${device.tablet} {
