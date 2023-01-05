@@ -49,7 +49,6 @@ const Btn = styled.button`
   text-decoration: none;
   &:hover {
     transform: scale(1.25);
-    font-size: 1rem;
   }
   //Media Queries
   @media ${device.tablet} {
@@ -59,10 +58,6 @@ const Btn = styled.button`
   }
   @media ${device.mobileL} {
     height: 1.5rem;
-    width: 5rem;
-    font-size: 0.5rem;
-  }
-  @media ${device.mobileM} {
     width: 4.5rem;
     font-size: 0.4rem;
   }

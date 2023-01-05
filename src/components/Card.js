@@ -59,16 +59,12 @@ const Product = styled(Link)`
   justify-content: space-around;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  /* border-radius: 10px; */
   //Media Queries
   @media ${device.tablet} {
     height: 250px;
   }
   @media ${device.mobileL} {
-    height: 150px;
-  }
-  @media ${device.mobileM} {
-    height: 100px;
+    height: 80px;
   }
 `;
 
@@ -89,12 +85,8 @@ const Img = styled.div`
     height: 60px;
   }
   @media ${device.mobileL} {
-    width: 40px;
-    height: 40px;
-  }
-  @media ${device.mobileM} {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
 `;
 
@@ -111,15 +103,10 @@ const Title = styled.div`
   }
   @media ${device.mobileL} {
     p {
-      font-size: 0.6rem;
-    }
-  }
-  @media ${device.mobileM} {
-    p {
       font-size: 0.4rem;
     }
-  }
-`;
+  } 
+`
 
 const Price = styled.div`
   color: black;
@@ -134,12 +121,7 @@ const Price = styled.div`
   }
   @media ${device.mobileL} {
     p {
-      font-size: 0.6rem;
-    }
-  }
-  @media ${device.mobileM} {
-    p {
-      font-size: 0.5rem;
+      font-size: 0.4rem;
     }
   }
 `;
