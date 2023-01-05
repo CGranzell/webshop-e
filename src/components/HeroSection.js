@@ -54,10 +54,10 @@ const Container = styled.div`
     height: 450px;
   }
   @media ${device.mobileL} {
-    height: 300px;
+    height: 400px;
   }
   @media ${device.mobileS} {
-    height: 250px;
+    height: 300px;
   }
 `;
 
@@ -78,6 +78,7 @@ const WrapperText = styled.div`
   p,
   button {
     margin-top: 1rem;
+    margin-left: 1rem;
     font-family: "Montserrat", sans-serif;
   }
   h3 {
@@ -86,15 +87,15 @@ const WrapperText = styled.div`
   // Media Queries
   @media ${device.tablet} {
     h3 {
-      font-size: 3rem;
+      font-size: 2.8rem;
     }
   }
   @media ${device.mobileL} {
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     p {
-      font-size: 0.7rem;
+      font-size: 0.5rem;
     }
   }
   @media ${device.mobileS} {
@@ -124,10 +125,12 @@ const WrapperImg = styled.div`
     height: 300px;
   }
   @media ${device.mobileL} {
-    height: 200px;
+    top: 25%;
+    height: 150px;
+    border-radius: 0;
   }
   @media ${device.mobileS} {
-    height: 150px;
+    height: 120px;
   }
 `;
 
@@ -137,9 +140,7 @@ const ImgContainer = styled.div`
   height: 70%;
   justify-content: center;
   align-items: center;
-  // Media Queries
-  @media ${device.tablet} {
-  }
+
   img {
     width: 100%;
     height: 100%;

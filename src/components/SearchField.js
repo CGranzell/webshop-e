@@ -81,7 +81,7 @@ const SearchField = () => {
         )}
 
         <SearchButton type="submit">
-          <BsSearch size="20px" />
+          <BsSearch size="15px" />
         </SearchButton>
       </Form>
     </Container>
@@ -106,7 +106,7 @@ const Form = styled.form`
 const Input = styled.input`
   padding: 0.4rem;
   width: 40%;
-  height: 3.3rem;
+  height: 3rem;
   border-radius: 14px;
   font-size: 1.2rem;
   font-family: 'Montserrat', sans-serif;
@@ -114,7 +114,9 @@ const Input = styled.input`
     height: 2.6rem;
   }
   @media ${device.mobileL} {
-    height: 2rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
   }
 `;
 
@@ -179,4 +181,8 @@ const SearchButton = styled.button`
   border: none;
   cursor: pointer;
   margin-left: -40px;
+
+  @media ${device.mobileL} {
+    margin-left: -25px;
+  }
 `;

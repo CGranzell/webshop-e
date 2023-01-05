@@ -30,7 +30,7 @@ cursor: pointer;
 const WrapperLogo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 10rem;
+  width: 7rem;
   align-items: center;
 `
 

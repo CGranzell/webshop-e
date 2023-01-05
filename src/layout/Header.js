@@ -98,19 +98,18 @@ const HamburgerNavLinks = styled(NavLink)`
 `;
 
 const Hamburger = styled.div`
-  border: 1px solid black;
   height: 50px;
   width: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   display: none;
   span {
-    border: 1px solid black;
     width: 25px;
     height: 3px;
-    margin: 5px auto;
+    margin: 3px auto;
     background-color: black;
     color: black;
   }
@@ -118,6 +117,7 @@ const Hamburger = styled.div`
   @media ${device.tablet} {
     display: flex;
   }
+  
 `;
 const HamburgerMenu = styled.div`
   position: fixed;
@@ -136,4 +136,5 @@ const HamburgerMenuActive = styled.div`
   background-color: beige;
   width: 100%;
   z-index: 1;
+  
 `;

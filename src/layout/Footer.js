@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import Logo from "../components/Logo";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import Logo from '../components/Logo';
 import {
   FaYoutube,
   FaFacebook,
   FaInstagram,
   FaCopyright,
-} from "react-icons/fa";
-import { device } from "../components/MediaQueries";
+} from 'react-icons/fa';
+import { device } from '../components/MediaQueries';
 
 const Footer = () => {
   return (
@@ -29,9 +29,9 @@ const Footer = () => {
           <p>Connect</p>
         </div>
         <Icons>
-          <FaInstagram size="30px" />
-          <FaFacebook size="30px" />
-          <FaYoutube size="30px" />
+          <FaInstagram size="20px" />
+          <FaFacebook size="20px" />
+          <FaYoutube size="20px" />
         </Icons>
       </WrapperSocial>
     </Container>
@@ -45,7 +45,10 @@ const Container = styled.div`
   width: 100vw;
   background-color: #9a9998;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  //Media Queries
+  @media ${device.mobileL} {
+  }
 `;
 
 const WrapperLinks = styled.div`
@@ -56,6 +59,10 @@ const WrapperLinks = styled.div`
   align-items: center;
   justify-content: center;
   color: white;
+  //Media Queries
+  @media ${device.mobileL} {
+    justify-content: space-evenly;
+  }
 `;
 const Links = styled(Link)`
   text-decoration: none;
@@ -98,6 +105,7 @@ const WrapperSocial = styled.div`
   //Media Queries
   @media ${device.mobileL} {
     p {
+      height: 80%;
       font-size: 0.7rem;
     }
   }
@@ -105,10 +113,19 @@ const WrapperSocial = styled.div`
 
 const Icons = styled.div`
   display: flex;
-  width: 50%;
+  width: 8rem;
   height: 2rem;
-  justify-content: space-around;
+  justify-content: space-evenly;
+
+  //Media Queries
+  @media ${device.mobileL} {
+    width: 5rem;
+  }
 `;
 const Copyright = styled.div`
   display: flex;
+  //Media Queries
+  @media ${device.mobileL} {
+    font-size: 0.5rem;
+  }
 `;

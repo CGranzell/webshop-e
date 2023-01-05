@@ -59,7 +59,7 @@ const Product = styled(Link)`
   justify-content: space-around;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   //Media Queries
   @media ${device.tablet} {
     height: 250px;

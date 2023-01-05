@@ -129,10 +129,7 @@ const Container = styled.div`
     }
   }
   @media ${device.mobileL} {
-    height: 19rem;
-  }
-  @media ${device.mobileS} {
-    height: 15rem;
+    height: 12rem;
     h3 {
       font-size: 0.8rem;
     }
@@ -148,7 +145,8 @@ const Wrapper = styled.div`
     margin-top: 1rem;
     height: 50%;
   }
-  @media ${device.mobileS} {
+  @media ${device.mobileL} {
+    margin-top: 2rem;
     height: 40%;
   }
 `;
@@ -173,10 +171,10 @@ const ImgWrapper = styled.div`
       width: 10rem;
     }
   }
-  @media ${device.mobileS} {
+  @media ${device.mobileL} {
     img {
-      height: 8rem;
-      width: 8rem;
+      height: 6rem;
+      width: 6rem;
     }
   }
 `;
@@ -194,7 +192,8 @@ const StyledArrow = styled.button`
   @media ${device.tablet} {
     font-size: 4rem;
   }
-  @media ${device.mobileS} {
-    font-size: 3rem;
+  @media ${device.mobileL} {
+    margin-top: 2rem;
+    font-size: 1.8rem;
   }
 `;
