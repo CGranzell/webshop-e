@@ -116,18 +116,18 @@ function CartPage() {
                               <Img>
                                 <img src={cartItem.image} alt="" />
                               </Img>
-                              <Title>
+                              <div>
                                 <p>{cartItem.title}</p>
-                              </Title>
+                              </div>
                             </TdProduct>
 
                             <TdPrice>
-                              <Price>
+                              <div>
                                 <p>{cartItem.price}</p>
-                              </Price>
+                              </div>
                             </TdPrice>
                             <TdQty>
-                              <Qty>
+                              <div>
                                 <p>{cartItem.quantity}</p>
 
                                 <button
@@ -146,12 +146,12 @@ function CartPage() {
                                 >
                                   +
                                 </button>
-                              </Qty>
+                              </div>
                             </TdQty>
                             <TdAmount>
-                              <Amount>
+                              <div>
                                 <p>{amount.toFixed(2)}</p>
-                              </Amount>
+                              </div>
                             </TdAmount>
                           </tr>
                         </tbody>
@@ -255,14 +255,16 @@ const WrapperCart = styled.div`
 
 const Cart = styled.div`
   height: auto;
-  width: 80%;
-  margin-top: 3rem;
+  width: 90%;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   h1 {
     text-align: center;
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -272,39 +274,46 @@ const EmptyCart = styled.div`
 
 const WrapperProducts = styled.div`
   height: auto;
-  width: 100%;
+  width: 80%;
   background-color: white;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
 `;
 const Table = styled.table`
+  text-align: center;
   width: 100%;
   //Media Queries
   @media ${device.tablet} {
-    font-size: 0.8rem;
+    font-size: 0.3rem;
+    p{
+      text-align: center;
+    }
   }
 `;
 
 const TdProduct = styled.td`
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   margin-top: 1rem;
+  width: 100%;
+  //Media Queries
+  @media ${device.mobileL} {
+    font-size: 0.3rem;
+  }
 `;
 
 const TdPrice = styled.td`
-  text-align: center;
-  //Media Queries
-  @media ${device.tablet} {
-    p {
-      font-size: 0.8rem;
-    }
-  }
+width: 10%;
 `;
 const TdQty = styled.td`
-  text-align: center;
-  button {
+ width: 10%;
+
+
+button {
     width: 2rem;
     margin-left: 0.5rem;
     background-color: #c58764;
@@ -316,111 +325,37 @@ const TdQty = styled.td`
       cursor: pointer;
     }
   }
-  //Media Queries
   @media ${device.tablet} {
     button {
       width: 1.5rem;
       height: 0.5rem;
       font-size: 0.5rem;
     }
-  }
+  } 
+  @media ${device.mobileL} {
+    button {
+      width: 0.5rem;
+      height: 0.3rem;
+      font-size: 0.2rem;
+    }
+  } 
 `;
 const TdAmount = styled.td`
-  text-align: center;
-  margin-top: 1rem;
-  //Media Queries
-  @media ${device.tablet} {
-  }
+ width: 10%;
 `;
 
 const Img = styled.div`
-  margin-left: 5%;
-  width: 150px;
+width: 150px;
   height: 150px;
-  img {
+
+img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
   }
-  //Media Queries
   @media ${device.tablet} {
-    width: 100px;
-    height: 100px;
-  }
-  @media ${device.mobileL} {
-    width: 70px;
-    height: 70px;
-  }
-`;
-const Title = styled.div`
-  margin-left: 10%;
-  height: 100%;
-  color: black;
-  p {
-    font-size: 1.3rem;
-  }
-  //Media Queries
-  @media ${device.tablet} {
-    p {
-      font-size: 0.8rem;
-    }
-  }
-  @media ${device.mobileL} {
-    p {
-      font-size: 0.6rem;
-    }
-  }
-`;
-
-const Qty = styled.div`
-  color: black;
-  p {
-    font-size: 1.3rem;
-  }
-  //Media Queries
-  @media ${device.tablet} {
-    p {
-      font-size: 0.8rem;
-    }
-  }
-  @media ${device.mobileL} {
-    p {
-      font-size: 0.6rem;
-    }
-  }
-`;
-
-const Price = styled.div`
-  color: black;
-  p {
-    font-size: 1.3rem;
-  }
-  //Media Queries
-  @media ${device.tablet} {
-    p {
-      font-size: 0.8rem;
-    }
-  }
-  @media ${device.mobileL} {
-    p {
-      font-size: 0.6rem;
-    }
-  }
-`;
-const Amount = styled.div`
-  color: black;
-  p {
-    font-size: 1.3rem;
-  }
-  //Media Queries
-  @media ${device.tablet} {
-    p {
-      font-size: 0.8rem;
-    }
-  }
-  @media ${device.mobileL} {
-    p {
-      font-size: 0.6rem;
-    }
+    width: 50px;
+    height: 50px;
   }
 `;
 
@@ -440,8 +375,8 @@ const WrapperTotalAmount = styled.div`
   }
   @media ${device.mobileL} {
     p {
-      font-size: 1rem;
-      margin-left: 40%;
+      font-size: 0.6rem;
+      margin-left: 50%;
     }
   }
 `;
@@ -471,6 +406,14 @@ const Form = styled.form`
     font-size: 0.8rem;
     input {
       height: 1.5rem;
+      font-size: 0.5rem;
+    }
+  }
+  
+  @media ${device.mobileL} {
+    font-size: 0.6rem;
+    input {
+      height: 1rem;
     }
   }
 `;
@@ -518,7 +461,7 @@ const ErrorMessage = styled.span`
     font-size: 1rem;
   }
   @media ${device.mobileL} {
-    font-size: 0.5rem;
+    font-size: 0.4rem;
   }
 `;
 const SuccesMessage = styled.span`
