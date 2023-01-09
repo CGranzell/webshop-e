@@ -4,6 +4,7 @@ import { fetchProduct } from "../API/Fetch";
 import styled from "styled-components";
 import ShopContext from "../context/ShopContext";
 import { device  } from "../components/MediaQueries";
+import AddToCartButton from '../components/AddToCartButton';
 
 const Product = () => {
   const [product, setProduct] = useState([]);
@@ -212,38 +213,3 @@ const About = styled.p`
   }
 `;
 
-const AddToCartButton = styled.button`
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #c58764;
-  height: 3rem;
-  width: 9rem;
-  border: none;
-  border-radius: 14px;
-  font-size: 1rem;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-  text-decoration: none;
-  &:hover {
-    transform: scale(1.25);
-  }
-  //Media Queries
-  @media ${device.tablet} {
-    height: 2.5rem;
-    width: 7rem;
-    font-size: 0.7rem;
-    &:hover {
-    transform: scale(1);
-  }
-  }
-  @media ${device.mobileL} {
-    height: 1.5rem;
-    width: 3rem;
-    border-radius: 8px;
-    font-size: 0.3rem;
-  }
-`;

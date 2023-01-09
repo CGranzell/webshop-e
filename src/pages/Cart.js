@@ -251,6 +251,7 @@ const WrapperCart = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #edeef7;
+  
 `;
 
 const Cart = styled.div`
@@ -261,15 +262,18 @@ const Cart = styled.div`
   flex-direction: column;
   align-items: center;
   
+  
   h1 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1rem;
+   
   }
 `;
 
 const EmptyCart = styled.div`
   text-align: center;
+  border: 1px solid black;
 `;
 
 const WrapperProducts = styled.div`
@@ -440,7 +444,7 @@ const ConfirmBtn = styled.button`
   font-family: "Montserrat", sans-serif;
   &:hover {
     transform: scale(1.25);
-    font-size: 1rem;
+    
   }
   //Media Queries
   @media ${device.tablet} {
@@ -448,6 +452,7 @@ const ConfirmBtn = styled.button`
     height: 1.5rem;
     font-size: 0.5rem;
     margin-top: 1rem;
+    
   }
 `;
 
