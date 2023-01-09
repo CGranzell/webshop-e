@@ -452,6 +452,9 @@ const ConfirmBtn = styled.button`
     height: 1.5rem;
     font-size: 0.5rem;
     margin-top: 1rem;
+    &:hover {
+    transform: scale(1);
+  }
     
   }
 `;
