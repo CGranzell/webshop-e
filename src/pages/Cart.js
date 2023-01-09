@@ -273,7 +273,6 @@ const Cart = styled.div`
 
 const EmptyCart = styled.div`
   text-align: center;
-  border: 1px solid black;
 `;
 
 const WrapperProducts = styled.div`
