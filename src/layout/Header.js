@@ -133,7 +133,7 @@ const HamburgerMenuActive = styled.div`
   left: 0;
   top: 80px;
   flex-direction: column;
-  background-color: beige;
+  background-color: white;
   width: 100%;
   z-index: 1;
   
